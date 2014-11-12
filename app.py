@@ -1,24 +1,25 @@
 import random
 
 def main():
-	quit = False
+	loops = 0
 	score = []
 	print("Welcome to the guessing game!");
 	print("Guess a number.")
-	secret = random.randint(1,100)
+	secret = random.randint(1,64)
 	# print(secret)
-	while(not quit):
+	while(loops < 8):
 		try:
 			guess = input(":")
 			guess = int(guess)
 			score.append(compare(guess, secret))
 			if (score[-1] == 0):
-				print("Your score is:", calc_score(score))
 				break
+			loops += 1
 		except ValueError:
-			if(guess.upper() == 'Q'):
-				print("Thanks for playing!")
-				quit = True
+			continue
+	if (loops >= 8):
+		print("You lose!")
+
 
 def calc_score(scores):
 	total = 0
