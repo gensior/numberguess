@@ -39,12 +39,5 @@ def compare(guess, secret):
 		print("You win")
 	return difference
 
-
-# print("Hello program")
-"""
-	Multi line comments
-	use triple quotes
-"""
-
 if __name__ == "__main__":
 	main()
